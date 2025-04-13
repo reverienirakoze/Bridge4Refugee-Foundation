@@ -1,0 +1,308 @@
+body {
+  background-image:url("https://www.caritas.org/wordpress/wp-content/uploads/2017/09/36391700623_80ce2fe6da_z.jpg");
+  margin: 0;
+}
+
+/* Prevent Horizontal Overflow */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal overflow */
+}
+
+/* Global Box Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 900px;
+  background-color: #0D2B4B;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.background-video {
+  width: 100%;
+}
+.hero-head-container {
+  position: absolute;
+  top: 2%;
+  right: 40%;
+  width: 600px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+  font-size: 50px;
+}
+ .hero-head {
+  color: white;
+  font-weight: bold;
+ }
+.hero-text {
+  color: #0D2B4B;
+  font-size: 18px;
+  padding: 0 20px;
+}
+
+.mission-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: left;
+  z-index: 3;
+}
+
+.vision-box {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: right;
+  z-index: 3;
+}
+
+.organizer {
+  display:flex;
+  background-color: white;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Curve Spacer */
+.beforevalues {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(transparent 100%);
+}
+
+/* Values Section */
+.values {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  padding: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.indvalue {
+  position: relative;
+  width: 200px;
+  max-width: 90%;
+  text-align: center;
+  color: black;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: orange;
+  overflow: hidden;
+  transition: color 0.3s ease;
+  transition: top 0.6s ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.indvalue::before {
+  content: "";
+  position: absolute;
+  top: -100%; /* Start above */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: darkblue;
+  z-index: -1;
+  transition: top 0.5s ease; /* Change transition to top */
+}
+
+.indvalue:hover::before {
+  top: 0; /* Slide down into place */
+}
+
+.indvalue:hover {
+  color: #ffffff;
+  transition: color 0.3s 0.2s ease;
+}
+
+.team-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #4b4b4b;
+  color: white;
+}
+
+.team-heading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-member {
+  width: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.team-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+.overlayz {
+  position: absolute;
+  top: 10%;
+  right: 2%;
+  width: 400px;
+  height: 120px;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.781);
+  justify-content: center;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+  }
+
+.overlayz a {
+  transition: transform 0.3s;
+  background-color: rgba(0, 0, 0, 0.479)
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.overlay a {
+  color: #0D2B4B;
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+.overlay:hover {
+  opacity: 1;
+}
+
+.video-box {
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  left: 50%;
+  width: 450px;
+  border: 2px solid white;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+.team-image:hover .overlay {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.team-member h3 {
+  margin-top: 1rem;
+  font-size: 18px;
+  color: white;
+}
+
+.team-member p {
+  color: white;
+  font-size: 20px;
+}
+
+/* Slider Container */
+#slider {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+/* Slides */
+.slide {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0; /* Prevent flex items from shrinking */
+  background-color: #0d2b4b81;
+}
+
+/* Navigation Buttons */
+.slider-prev, .slider-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 100;
+}
+
+.slider-prev { left: 10px; }
+.slider-next { right: 10px; }
+
+.slide-title {
+  color: #fff;
+  text-transform:initial;
+  z-index: 100;
+  text-align:center;
+  align-items: center;
+}
+
+/* Slide body updated for centering */
+.slide-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* Container and caption cleanup */
+.container {
+  width: 100%;
+  max-width: 900px; /* Optional for better readability */
+  margin: 0 auto;
+}
+
+.slide-caption {
+  padding: 20px;
+}
+
+.widget-container {
+  padding: 0;
+}
