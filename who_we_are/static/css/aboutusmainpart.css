@@ -1,6 +1,5 @@
 body {
   background-image:url("https://www.caritas.org/wordpress/wp-content/uploads/2017/09/36391700623_80ce2fe6da_z.jpg");
-  margin: 0;
 }
 
 /* Prevent Horizontal Overflow */
@@ -18,13 +17,12 @@ html, body {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 900px;
+  height: fit-content;
   background-color: #0D2B4B;
   background-size: cover;
   background-position: center;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row;
 }
 
 .background-video {
@@ -33,10 +31,9 @@ html, body {
 .hero-head-container {
   position: absolute;
   top: 2%;
-  right: 40%;
-  width: 600px;
-  height: 120px;
+  left: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   opacity: 1;
   transition: 0.3s ease-in-out;
@@ -46,33 +43,27 @@ html, body {
  .hero-head {
   color: white;
   font-weight: bold;
- }
+  filter: drop-shadow(2px 4px 6px rgba(0, 0, 139, 0.315));
+}
 .hero-text {
   color: #0D2B4B;
   font-size: 18px;
   padding: 0 20px;
 }
 
-.mission-box {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  text-align: left;
-  z-index: 3;
+.vision {
+  background-image: url('https://media.istockphoto.com/id/1413790486/photo/abstract-dark-blue-background-silk-satin-navy-blue-color-elegant-background.jpg?s=612x612&w=0&k=20&c=DoU92DzLD5m4wynhz06GxRFM0syakHGsBgaLsI1ek-c=');
+  padding: 20px;
 }
 
 .vision-box {
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  text-align: right;
-  z-index: 3;
-}
-
-.organizer {
-  display:flex;
   background-color: white;
-  padding: 10px;
-  justify-content: space-between;
-  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  z-index: 3;
+  border: 5px solid orange;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 /* Curve Spacer */
@@ -83,13 +74,17 @@ html, body {
 }
 
 /* Values Section */
+.val {
+  background-color: white;
+  padding: 2rem;
+}
 .values {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-color: white;
-  padding: 2rem 0;
   flex-wrap: wrap;
+  text-align: center;
 }
 
 .indvalue {
@@ -100,7 +95,7 @@ html, body {
   color: black;
   padding: 1rem;
   margin: 1rem;
-  background-color: orange;
+  background-color: white;
   overflow: hidden;
   transition: color 0.3s ease;
   transition: top 0.6s ease-in-out;
@@ -115,7 +110,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: darkblue;
+  background-color: #0D2B4B;
   z-index: -1;
   transition: top 0.5s ease; /* Change transition to top */
 }
@@ -131,28 +126,36 @@ html, body {
 
 .team-section {
   padding: 4rem 2rem;
-  text-align: center;
-  background-color: #4b4b4b;
   color: white;
+  background-color: white;
+  display: flex;
 }
 
 .team-heading {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 18px;
+  background-color: #0D2B4B;
+  display: block;
+  width: 600px;
   color: white;
+  padding: 10px;
+  text-align: center;
+  align-content: center;
 }
 
 .team-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 10px 0;
   gap: 2rem;
+  background-color: #4b4b4b;
 }
 
 .team-member {
   width: 200px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
 }
 
 .team-image {

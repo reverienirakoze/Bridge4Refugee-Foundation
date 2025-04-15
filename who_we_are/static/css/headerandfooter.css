@@ -20,17 +20,18 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 .logo-container {
     flex-shrink: 0;
-    width: 200px;
+    width: 150px;
 }
 
 .site-logo {
     width: 100%;
     height: auto;
-    filter: drop-shadow(2px 4px 6px white); /* 👈 gives shadow */
+    filter: drop-shadow(2px 4px 6px white); /* gives shadow */
 }
 
 nav {
@@ -99,6 +100,7 @@ nav ul .dropdown-menu {
     transform: translateY(10px);
     transition: all 0.3s ease;
     z-index: 999;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.25);
 }
 
 nav ul .dropdown:hover .dropdown-menu {
@@ -192,6 +194,10 @@ nav ul .dropdown-menu li a:hover {
         opacity: 1;
         visibility: visible;
     }
+}
+
+.menu-main.active {
+    display: block;
 }
 
 .hero {

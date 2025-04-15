@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: Bridge4Refugee Foundation
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn Bridge4Refugee.wsgi:application"
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Bridge4Refugee.settings
+      - key: SECRET_KEY
+        value: B4R@Kigalihereforyou
