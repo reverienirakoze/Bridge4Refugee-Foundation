@@ -80,7 +80,7 @@ nav ul li a::before {
 nav ul li a:hover::before {
     left: 0;
   }
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a.active {
     color: white;
     background-color: #0D2B4B;
 }
@@ -117,7 +117,7 @@ nav ul .dropdown-menu li a {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav ul .dropdown-menu li a:hover {
+nav ul .dropdown-menu li a:hover, nav ul .dropdown-menu li a.active {
     color: white;
 }
 /* CTA Button Style */
