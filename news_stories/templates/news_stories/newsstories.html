@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="preload" href="{% static 'css/headerandfooter.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}">
     <noscript><link rel="stylesheet" href="{% static 'css/headerandfooter.css' %}"></noscript>
     <link rel="preload" href="{% static 'css/newsstories.css' %}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{% static 'css/newsstories.css' %}"></noscript>
@@ -37,8 +38,8 @@
                 <li class="dropdown">
                     <a href="#">Get Involved</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/">Become a Scholar</a></li>
-                        <li><a href="/">Become a Facilitator</a></li>
+                        <li><a href="/">Become a Mentor</a></li>
+                        <li><a href="/">Partner with Us</a></li>
                     </ul>
                 </li>
                 <li class="cta"><a href="/contribute/">Donate</a></li>
@@ -48,6 +49,30 @@
             <i class="fas fa-bars"></i>
         </div>
     </header>
+    <p style="color: red; text-align: center;">
+        {% if stories %} Found {{ stories|length }} stories. {% else %} No stories found. {% endif %}
+    </p>
+    {% block content %}
+    <section class="news-section">
+        <h2 class="section-title">News & Stories</h2>
+        <p style="color: red; text-align: center;">
+            {% if stories %} Found {{ stories|length }} stories. {% else %} No stories found. {% endif %}
+        </p>
+        <div class="news-grid">
+            {% for story in stories %}
+            <div class="news-card">
+                <a href="{% url 'story_detail' story.slug %}">
+                    <img src="{{ story.image_url|default:"https://via.placeholder.com/300x200" }}" alt="{{ story.title }}">
+                    <div class="news-content">
+                        <h3>{{ story.title }}</h3>
+                        <p>{{ story.summary }}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endblock %}
     <footer>
         <div class="footer-container">
             <div class="logo-container">

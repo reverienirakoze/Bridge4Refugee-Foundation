@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Story
 
 # Define the views for each page
 def who_we_are_view(request):
@@ -15,3 +16,11 @@ def home_view(request):
 
 def our_work_view(request):
     return render(request, 'our_work/ourwork.html')
+
+def news_stories(request):
+    stories = Story.objects.all()
+    return render(request, 'newsstories.html', {'stories': stories})
+
+def story_list(request):
+    stories = Story.objects.all()  # Get all stories from the database
+    return render(request, 'your_template_name.html', {'stories': stories})

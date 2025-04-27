@@ -25,4 +25,5 @@ urlpatterns = [
     path('contribute/', include('contribute.urls')),
     path('our_work/', include('our_work.urls')),
     path('', include('who_we_are.urls')),
+    path('ourteam/', include('ourteam.urls')),
 ]
